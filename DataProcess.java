@@ -160,8 +160,8 @@ public class DataProcess extends Configured implements Tool {
             System.exit(-1);
         }
         Configuration conf = getConf();
-        DistributedCache.addCacheFile(new URI("hdfs://w-namenode1v.cldiskb.shht.qihoo.net:9000/user/xitong/test/distributedcache/bad_disk_list#bad_disk_list"), conf);
-        DistributedCache.addCacheFile(new URI("hdfs://w-namenode1v.cldiskb.shht.qihoo.net:9000/user/xitong/test/distributedcache/data#data"), conf);
+        DistributedCache.addCacheFile(new URI("hdfs://namenode1:9000/user/xitong/test/distributedcache/bad_disk_list#bad_disk_list"), conf);
+        DistributedCache.addCacheFile(new URI("hdfs://namenode1:9000/user/xitong/test/distributedcache/data#data"), conf);
         DistributedCache.createSymlink(conf);
         Job job = new Job(conf);
         job.setJarByClass(DataProcess.class);
